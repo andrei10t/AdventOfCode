@@ -5,9 +5,9 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static final String fileDay1 = "/Users/atoader/work/AdventOfCode2019/Problems/input_1.txt";
+       public static final String fileDay1 = "/Users/atoader/work/AdventOfCode2019/Problems/input_2.txt";
 
-    public ArrayList<Integer> getAsArrayList(){
+    public ArrayList<Integer> getAsArrayList() {
 
        ArrayList<Integer> input = new ArrayList<>();
         try {
@@ -22,24 +22,47 @@ public class Main {
         return input;
     }
 
+    public ArrayList<Integer> delimiter(){
+        ArrayList<Integer> input = new ArrayList<>();
+        try {
+            Scanner scanner = new Scanner(new File(fileDay1));
+            String[] stuff = scanner.nextLine().split(",");
+            for (String s: stuff) {
+                input.add(Integer.parseInt(s));
+            }
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return input;
+    }
 
-    public void solve1Day1(){
+
+    public void solve1Day1() {
         ArrayList<Integer> input = getAsArrayList();
         Day1 day1 = new Day1();
+
         day1.computeSum(input);
         System.out.println(day1.result);
-        day1.result=0;
+
         day1.recursiveComputing(input);
         System.out.println(day1.result);
     }
 
+    public void solveDay2(){
+        ArrayList<Integer> input = delimiter();
+        ArrayList<Integer> clone = new ArrayList<>(input);
+        Day2 day2 = new Day2();
 
-
-    public static void main(String[] args){
-      Main solution = new Main();
-
-      solution.solve1Day1();
+        day2.compute(input);
+        day2.backtrack(clone);
 
     }
 
+
+    public static void main(String[] args) {
+      Main solution = new Main();
+      //solution.solve1Day1();
+      solution.solveDay2();
+    }
 }
