@@ -1,3 +1,4 @@
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
@@ -5,7 +6,7 @@ import java.util.Scanner;
 
 public class Main {
 
-       public static final String fileDay1 = "/Users/atoader/work/AdventOfCode2019/Problems/input_2.txt";
+       public static final String fileDay1 = "/Users/atoader/work/AdventOfCode2019/Problems/input_3.txt";
 
     public ArrayList<Integer> getAsArrayList() {
 
@@ -37,6 +38,25 @@ public class Main {
         return input;
     }
 
+    public ArrayList<ArrayList<String>> delimiterString(){
+        ArrayList<ArrayList<String>> input = new ArrayList<>();
+        try {
+            Scanner scanner = new Scanner(new File(fileDay1));
+            while(scanner.hasNextLine()) {
+                ArrayList<String> wire = new ArrayList<>();
+                String[] stuff = scanner.nextLine().split(",");
+                for (String s : stuff) {
+                    wire.add(s);
+                }
+                input.add(wire);
+            }
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return input;
+    }
+
 
     public void solve1Day1() {
         ArrayList<Integer> input = getAsArrayList();
@@ -59,10 +79,16 @@ public class Main {
 
     }
 
+    public void solveDay3(){
+        ArrayList<ArrayList<String>>input = delimiterString();
+        Day3 day3 = new Day3();
+        day3.solve(input);
+    }
 
     public static void main(String[] args) {
       Main solution = new Main();
       //solution.solve1Day1();
-      solution.solveDay2();
+     // solution.solveDay2();
+        solution.solveDay3();
     }
 }
