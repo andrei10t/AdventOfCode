@@ -85,10 +85,16 @@ public class Main {
         day3.solve(input);
     }
 
+    public void solveDay4(){
+        Day4 day4 = new Day4();
+        day4.solve();
+    }
+
     public static void main(String[] args) {
       Main solution = new Main();
       //solution.solve1Day1();
      // solution.solveDay2();
-        solution.solveDay3();
+        //solution.solveDay3();
+        solution.solveDay4();
     }
 }
