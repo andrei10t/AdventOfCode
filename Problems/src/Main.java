@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Main {
 
-       public static final String fileDay1 = "/Users/atoader/work/AdventOfCode2019/Problems/input_3.txt";
+       public static final String fileDay1 = "/Users/atoader/work/AdventOfCode2019/Problems/input_5.txt";
 
     public ArrayList<Integer> getAsArrayList() {
 
@@ -90,11 +90,18 @@ public class Main {
         day4.solve();
     }
 
+    public void solveDay5(){
+        ArrayList<Integer> input = delimiter();
+        Day5 day5 = new Day5();
+        day5.solve(input);
+    }
+
     public static void main(String[] args) {
       Main solution = new Main();
       //solution.solve1Day1();
-     // solution.solveDay2();
+        // solution.solveDay2();
         //solution.solveDay3();
-        solution.solveDay4();
+       // solution.solveDay4();
+        solution.solveDay5();
     }
 }
