@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/AdventOfCode2019.iml" filepath="$PROJECT_DIR$/.idea/AdventOfCode2019.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Problems/Problems.iml" filepath="$PROJECT_DIR$/Problems/Problems.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Codejam/Codejam.iml" filepath="$PROJECT_DIR$/Codejam/Codejam.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/CompetitiveCoding.iml" filepath="$PROJECT_DIR$/.idea/CompetitiveCoding.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GoogleKickOff/GoogleKickOff.iml" filepath="$PROJECT_DIR$/GoogleKickOff/GoogleKickOff.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AdventOfCode2019/Problems.iml" filepath="$PROJECT_DIR$/AdventOfCode2019/Problems.iml" />
     </modules>
   </component>
 </project>

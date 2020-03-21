@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Main {
 
-       public static final String fileDay1 = "/Users/atoader/work/AdventOfCode2019/Problems/input_5.txt";
+       public static final String fileDay1 = "/Users/atoader/work/AdventOfCode2019/Problems/input_6.txt";
 
     public ArrayList<Integer> getAsArrayList() {
 
@@ -57,6 +57,22 @@ public class Main {
         return input;
     }
 
+    public ArrayList<String> getAsArrayListDay6(){
+        ArrayList<String> input = new ArrayList<>();
+        try {
+            Scanner scanner = new Scanner(new File(fileDay1));
+            while(scanner.hasNextLine()) {
+                String[] stuff = scanner.nextLine().split("\\)");
+               input.add(stuff[0]);
+                input.add(stuff[1]);
+            }
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return input;
+    }
+
 
     public void solve1Day1() {
         ArrayList<Integer> input = getAsArrayList();
@@ -96,12 +112,19 @@ public class Main {
         day5.solve(input);
     }
 
+    public void solveDay6(){
+        ArrayList<String> input = getAsArrayListDay6();
+        Day6 day6 = new Day6();
+        day6.solve(input);
+    }
+
     public static void main(String[] args) {
       Main solution = new Main();
       //solution.solve1Day1();
         // solution.solveDay2();
         //solution.solveDay3();
        // solution.solveDay4();
-        solution.solveDay5();
+       // solution.solveDay5();
+        solution.solveDay6();
     }
 }
